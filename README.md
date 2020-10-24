@@ -1,2 +1,3 @@
-# wp-nox-theme-helpers
-NOX / WordPress / Theme Helpers
+# NOX / WordPress / Theme Helpers
+
+Common helpers for WordPress themes.
