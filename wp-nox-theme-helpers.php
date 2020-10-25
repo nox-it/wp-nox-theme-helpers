@@ -31,49 +31,49 @@
     defined('NOX_DISABLE_THEME_HELPERS_FUNCTIONS')    or define('NOX_DISABLE_THEME_HELPERS_FUNCTIONS',    []);
 
     if (!NOX_DISABLE_THEME_HELPERS) {
-        require_once(__DIR__.'/helpers/helpers.php');
+        require_once(__DIR__.'/helpers.php');
 
         if (!NOX_DISABLE_THEME_HELPERS_GMAPS) {
-            require_once(__DIR__.'/helpers/wp.acf.gmaps.php');
+            require_once(__DIR__.'/wp.acf.gmaps.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_ACF) {
-            require_once(__DIR__.'/helpers/wp.acf.php');
+            require_once(__DIR__.'/wp.acf.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_ADMIN) {
-            require_once(__DIR__.'/helpers/wp.admin.php');
+            require_once(__DIR__.'/wp.admin.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_AT_A_GLANCE) {
-            require_once(__DIR__.'/helpers/wp.at-a-glance.php');
+            require_once(__DIR__.'/wp.at-a-glance.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_CACHE) {
-            require_once(__DIR__.'/helpers/wp.cache.php');
+            require_once(__DIR__.'/wp.cache.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_CRON) {
-            require_once(__DIR__.'/helpers/wp.cron.php');
+            require_once(__DIR__.'/wp.cron.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_GENERIC) {
-            require_once(__DIR__.'/helpers/wp.generic.php');
+            require_once(__DIR__.'/wp.generic.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_HEAD_OPTIONS) {
-            require_once(__DIR__.'/helpers/wp.head.options.php');
+            require_once(__DIR__.'/wp.head.options.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_MAIL) {
-            require_once(__DIR__.'/helpers/wp.mail.php');
+            require_once(__DIR__.'/wp.mail.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_REWRITE) {
-            require_once(__DIR__.'/helpers/wp.rewrite.php');
+            require_once(__DIR__.'/wp.rewrite.php');
         }
 
         if (!NOX_DISABLE_THEME_HELPERS_UPLOADS) {
-            require_once(__DIR__.'/helpers/wp.uploads.php');
+            require_once(__DIR__.'/wp.uploads.php');
         }
     }
