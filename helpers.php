@@ -165,7 +165,18 @@
                 $pagenow = preg_replace('/(.*?\/|\?.*$)/', '', $_SERVER['REQUEST_URI']);
             }
 
-            return in_array($pagenow, ['wp-login.php', 'wp-register.php', 'administration', 'administracao', 'administracao-interna']);
+            $loginPages       = ['wp-login.php', 'wp-register.php', 'administration', 'administracao', 'administracao-interna'];
+            $customLoginPages = [];
+
+            if (is_array(NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES) && !empty(NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES)) {
+                $customLoginPages = NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES;
+            }
+
+            return in_array(
+                $pagenow,
+                array_merge($loginPages, $customLoginPages),
+                true
+            );
         }
     }
     #endregion
@@ -799,7 +810,7 @@
         }
     }
 
-    if (!function_exists('str_contains')) {
+    if (!function_exists('str_starts_with')) {
         /**
          * @param string $haystack
          * @param string $needle

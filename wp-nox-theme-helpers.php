@@ -13,22 +13,24 @@
 
     defined('ABSPATH') or die();
 
-    defined('ENV_IS_DEVELOPMENT')                     or define('ENV_IS_DEVELOPMENT',                     false);
-    defined('ENV_IS_STAGING')                         or define('ENV_IS_STAGING',                         false);
-    defined('ENV_IS_PRODUCTION')                      or define('ENV_IS_PRODUCTION',                      false);
-    defined('NOX_DISABLE_THEME_HELPERS')              or define('NOX_DISABLE_THEME_HELPERS',              false);
-    defined('NOX_DISABLE_THEME_HELPERS_GMAPS')        or define('NOX_DISABLE_THEME_HELPERS_GMAPS',        false);
-    defined('NOX_DISABLE_THEME_HELPERS_ACF')          or define('NOX_DISABLE_THEME_HELPERS_ACF',          false);
-    defined('NOX_DISABLE_THEME_HELPERS_ADMIN')        or define('NOX_DISABLE_THEME_HELPERS_ADMIN',        false);
-    defined('NOX_DISABLE_THEME_HELPERS_AT_A_GLANCE')  or define('NOX_DISABLE_THEME_HELPERS_AT_A_GLANCE',  false);
-    defined('NOX_DISABLE_THEME_HELPERS_CACHE')        or define('NOX_DISABLE_THEME_HELPERS_CACHE',        false);
-    defined('NOX_DISABLE_THEME_HELPERS_CRON')         or define('NOX_DISABLE_THEME_HELPERS_CRON',         false);
-    defined('NOX_DISABLE_THEME_HELPERS_GENERIC')      or define('NOX_DISABLE_THEME_HELPERS_GENERIC',      false);
-    defined('NOX_DISABLE_THEME_HELPERS_HEAD_OPTIONS') or define('NOX_DISABLE_THEME_HELPERS_HEAD_OPTIONS', false);
-    defined('NOX_DISABLE_THEME_HELPERS_MAIL')         or define('NOX_DISABLE_THEME_HELPERS_MAIL',         false);
-    defined('NOX_DISABLE_THEME_HELPERS_REWRITE')      or define('NOX_DISABLE_THEME_HELPERS_REWRITE',      false);
-    defined('NOX_DISABLE_THEME_HELPERS_UPLOADS')      or define('NOX_DISABLE_THEME_HELPERS_UPLOADS',      false);
-    defined('NOX_DISABLE_THEME_HELPERS_FUNCTIONS')    or define('NOX_DISABLE_THEME_HELPERS_FUNCTIONS',    []);
+    defined('ENV_IS_DEVELOPMENT')                      or define('ENV_IS_DEVELOPMENT',                      false);
+    defined('ENV_IS_STAGING')                          or define('ENV_IS_STAGING',                          false);
+    defined('ENV_IS_PRODUCTION')                       or define('ENV_IS_PRODUCTION',                       false);
+    defined('NOX_DISABLE_THEME_HELPERS')               or define('NOX_DISABLE_THEME_HELPERS',               false);
+    defined('NOX_DISABLE_THEME_HELPERS_GMAPS')         or define('NOX_DISABLE_THEME_HELPERS_GMAPS',         false);
+    defined('NOX_DISABLE_THEME_HELPERS_ACF')           or define('NOX_DISABLE_THEME_HELPERS_ACF',           false);
+    defined('NOX_DISABLE_THEME_HELPERS_ADMIN')         or define('NOX_DISABLE_THEME_HELPERS_ADMIN',         false);
+    defined('NOX_DISABLE_THEME_HELPERS_AT_A_GLANCE')   or define('NOX_DISABLE_THEME_HELPERS_AT_A_GLANCE',   false);
+    defined('NOX_DISABLE_THEME_HELPERS_CACHE')         or define('NOX_DISABLE_THEME_HELPERS_CACHE',         false);
+    defined('NOX_DISABLE_THEME_HELPERS_CRON')          or define('NOX_DISABLE_THEME_HELPERS_CRON',          false);
+    defined('NOX_DISABLE_THEME_HELPERS_GENERIC')       or define('NOX_DISABLE_THEME_HELPERS_GENERIC',       false);
+    defined('NOX_DISABLE_THEME_HELPERS_HEAD_OPTIONS')  or define('NOX_DISABLE_THEME_HELPERS_HEAD_OPTIONS',  false);
+    defined('NOX_DISABLE_THEME_HELPERS_MAIL')          or define('NOX_DISABLE_THEME_HELPERS_MAIL',          false);
+    defined('NOX_DISABLE_THEME_HELPERS_REWRITE')       or define('NOX_DISABLE_THEME_HELPERS_REWRITE',       false);
+    defined('NOX_DISABLE_THEME_HELPERS_UPLOADS')       or define('NOX_DISABLE_THEME_HELPERS_UPLOADS',       false);
+    defined('NOX_DISABLE_THEME_HELPERS_FUNCTIONS')     or define('NOX_DISABLE_THEME_HELPERS_FUNCTIONS',     []);
+    defined('NOX_DISABLE_THEME_HELPERS_POST_TYPES')    or define('NOX_DISABLE_THEME_HELPERS_POST_TYPES',    []);
+    defined('NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES')   or define('NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES',   []);
 
     if (!NOX_DISABLE_THEME_HELPERS) {
         require_once(__DIR__.'/helpers.php');

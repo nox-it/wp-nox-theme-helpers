@@ -11,6 +11,11 @@
 
             $output    = 'object';
             $operator  = 'and';
+            $postTypes = [];
+
+            if (is_array(NOX_DISABLE_THEME_HELPERS_POST_TYPES) && !empty(NOX_DISABLE_THEME_HELPERS_POST_TYPES)) {
+                $postTypes = NOX_DISABLE_THEME_HELPERS_POST_TYPES;
+            }
 
             foreach (get_post_types($args, $output, $operator) as $postType) {
                 $numPosts = wp_count_posts($postType->name);
@@ -29,7 +34,15 @@
                 $menuIcon = 'f155';
                 $noneText = 'Nenhum';
 
-                $cptLabel = (((int)$num === 0) ? $noneText.' '.$postType->labels->singular_name : $num.'&nbsp;'.$text);
+                if (!empty($cptName) && array_key_exists($cptName, $postTypes) && isset($postTypes[$cptName]['icon'], $postTypes[$cptName]['male'])) {
+                    $menuIcon = $postTypes[$cptName]['icon'];
+
+                    if (!$postTypes[$cptName]['male']) {
+                        $noneText = 'Nenhuma';
+                    }
+                }
+
+                $cptLabel = (((int)$num === 0) ? "{$noneText} {$postType->labels->singular_name}" : "{$num}&nbsp;{$text}");
 
                 /** @noinspection CssInvalidHtmlTagReference */
                 echo <<<HTML
