@@ -23,3 +23,8 @@ In order to enable the functionality, use the constant NOX_DISABLE_THEME_HELPERS
 = 1.0.1 =
 
   * General fixes.
+
+= 1.0.2 =
+
+  * Added the constant NOX_THEME_ASSETS_RELATIVE_PATH to control the relative path of the asset bundle (default: %theme%/assets/dist);
+  * General fixes.

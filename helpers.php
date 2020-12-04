@@ -27,15 +27,23 @@
     if (nox_theme_helpers_fn_enabled('validate_url')) {
         /**
          * @param string $url
+         * @param array  $allowedSchemes
          *
          * @return bool
-         *
-         * @todo Verificar a melhor forma de validar URL
          */
-        function validate_url(string $url): bool
+        function validate_url(string $url, array $allowedSchemes = ['http', 'https']): bool
         {
             /** @noinspection BypassedUrlValidationInspection */
-            return filter_var($url, FILTER_VALIDATE_URL);
+            if (filter_var($url, FILTER_VALIDATE_URL)) {
+                $parts = parse_url($url);
+
+                $scheme = strtolower(($parts['scheme'] ?? ''));
+                $host   = strtolower(($parts['host'] ?? ''));
+
+                return (in_array($scheme, $allowedSchemes, true) && !empty($host));
+            }
+
+            return false;
         }
     }
 
@@ -77,7 +85,7 @@
          */
         function get_assets_url(string $path, string $prefix = ''): string
         {
-            return get_template_url("{$prefix}/{$path}", '/assets/dist');
+            return get_template_url("{$prefix}/{$path}", NOX_THEME_ASSETS_RELATIVE_PATH);
         }
 
         if (nox_theme_helpers_fn_enabled('get_images_url')) {
@@ -157,7 +165,7 @@
         /**
          * @return bool
          */
-        function is_login()
+        function is_login(): bool
         {
             global $pagenow;
 
@@ -202,7 +210,7 @@
             $content = preg_replace('/<div/i', '<p', $content);
             $content = preg_replace('/div>/i', 'p>', $content);
             $content = apply_filters('the_content', $content);
-    
+
             /** @noinspection RequiredAttributes */
             $content = strip_tags($content, '<strong><b><em><i><ul><ol><li><a><h4><h5><h6><p><img><blockquote><br><br/><br />');
             $content = preg_replace('/<(p|h4|h5|h6) ?([^>]+)?>/', '<$1>', $content);
@@ -210,23 +218,23 @@
             $content = preg_replace('/<p>&nbsp;<\/p>/', '', $content);
             $content = preg_replace('/<p>(.*)<\/p>/', '<p class="'.$p_class.'">$1</p>', $content);
             $content = preg_replace('/\[fl](.*)\[\/fl]/', '<span class="first-letter">$1</span>', $content);
-    
+
             return $content;
         }
     }
 
     if (nox_theme_helpers_fn_enabled('get_as_description')) {
         /**
-         * @param $content
+         * @param string $content
          *
          * @return mixed|string
          */
-        function get_as_description($content)
+        function get_as_description(string $content): string
         {
             $content = strip_tags($content);
             $content = preg_replace('/(\n|\r\n|\n\r)/', '', $content);
 
-            return $content;
+            return (string)$content;
         }
     }
 
@@ -805,7 +813,6 @@
          */
         function str_contains(string $haystack, string $needle): bool
         {
-            /** @noinspection StrContainsCanBeUsedInspection */
             return '' === $needle || false !== strpos($haystack, $needle);
         }
     }
