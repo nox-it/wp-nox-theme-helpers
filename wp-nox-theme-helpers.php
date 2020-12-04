@@ -8,7 +8,7 @@
      * Author URI:  https://github.com/nox-it
      * License:     GNU General Public License v2 or later
      * License URI: http://www.gnu.org/licenses/gpl-2.0.html
-     * Version:     1.0.0
+     * Version:     1.0.1
      */
 
     defined('ABSPATH') or die();
@@ -31,6 +31,7 @@
     defined('NOX_DISABLE_THEME_HELPERS_FUNCTIONS')     or define('NOX_DISABLE_THEME_HELPERS_FUNCTIONS',     []);
     defined('NOX_DISABLE_THEME_HELPERS_POST_TYPES')    or define('NOX_DISABLE_THEME_HELPERS_POST_TYPES',    []);
     defined('NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES')   or define('NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES',   []);
+    defined('NOX_DISABLE_THEME_HELPERS_REST_ADM_MENU') or define('NOX_DISABLE_THEME_HELPERS_REST_ADM_MENU', ['menu-posts', 'menu-links', 'menu-comments']);
 
     if (!NOX_DISABLE_THEME_HELPERS) {
         require_once(__DIR__.'/helpers.php');

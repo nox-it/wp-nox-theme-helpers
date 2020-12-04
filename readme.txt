@@ -19,3 +19,7 @@ In order to enable the functionality, use the constant NOX_DISABLE_THEME_HELPERS
 = 1.0.0 =
 
   * Initial release
+
+= 1.0.1 =
+
+  * General fixes.

@@ -191,8 +191,8 @@
          */
         function get_as_content($content, $p_class = '')
         {
-            $content = preg_replace('/<ul.*>/i', '<ul>', $content);
-            $content = preg_replace('/<ol.*>/i', '<ol>', $content);
+            $content = preg_replace('/<ul([^>]+)>/i', '<ul>', $content);
+            $content = preg_replace('/<ol([^>]+)>/i', '<ol>', $content);
             $content = preg_replace('/<h1/i', '<h4', $content);
             $content = preg_replace('/h1>/i', 'h4>', $content);
             $content = preg_replace('/<h2/i', '<h4', $content);
@@ -202,7 +202,7 @@
             $content = preg_replace('/<div/i', '<p', $content);
             $content = preg_replace('/div>/i', 'p>', $content);
             $content = apply_filters('the_content', $content);
-
+    
             /** @noinspection RequiredAttributes */
             $content = strip_tags($content, '<strong><b><em><i><ul><ol><li><a><h4><h5><h6><p><img><blockquote><br><br/><br />');
             $content = preg_replace('/<(p|h4|h5|h6) ?([^>]+)?>/', '<$1>', $content);
@@ -210,7 +210,7 @@
             $content = preg_replace('/<p>&nbsp;<\/p>/', '', $content);
             $content = preg_replace('/<p>(.*)<\/p>/', '<p class="'.$p_class.'">$1</p>', $content);
             $content = preg_replace('/\[fl](.*)\[\/fl]/', '<span class="first-letter">$1</span>', $content);
-
+    
             return $content;
         }
     }
