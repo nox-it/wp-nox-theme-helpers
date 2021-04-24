@@ -24,8 +24,8 @@
     add_filter(
         'cron_schedules',
         static function ($schedules) {
-            $schedules['nox_every_minute'] = ['interval' => 60, 'display' => 'Every Minute'];
-            $schedules['nox_every_five_minutes'] = ['interval' => (60 * 5), 'display' => 'Every Five Minutes'];
+            $schedules['nyx_every_minute'] = ['interval' => 60, 'display' => 'Every Minute'];
+            $schedules['nyx_every_five_minutes'] = ['interval' => (60 * 5), 'display' => 'Every Five Minutes'];
 
             return $schedules;
         }

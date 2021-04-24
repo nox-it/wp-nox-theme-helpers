@@ -55,7 +55,7 @@
         static function () {
             global $menu;
 
-            $restricted = NOX_DISABLE_THEME_HELPERS_REST_ADM_MENU;
+            $restricted = NYX_DISABLE_THEME_HELPERS_REST_ADM_MENU;
 
             foreach ($menu as $key => $value) {
                 if (isset($value[5]) && in_array((string)$value[5], $restricted)) {

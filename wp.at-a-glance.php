@@ -13,8 +13,8 @@
             $operator  = 'and';
             $postTypes = [];
 
-            if (is_array(NOX_DISABLE_THEME_HELPERS_POST_TYPES) && !empty(NOX_DISABLE_THEME_HELPERS_POST_TYPES)) {
-                $postTypes = NOX_DISABLE_THEME_HELPERS_POST_TYPES;
+            if (is_array(NYX_DISABLE_THEME_HELPERS_POST_TYPES) && !empty(NYX_DISABLE_THEME_HELPERS_POST_TYPES)) {
+                $postTypes = NYX_DISABLE_THEME_HELPERS_POST_TYPES;
             }
 
             foreach (get_post_types($args, $output, $operator) as $postType) {

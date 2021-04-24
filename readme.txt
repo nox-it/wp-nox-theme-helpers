@@ -1,5 +1,5 @@
 === Theme Helpers ===
-Contributors: noxit
+Contributors: nyxit
 Requires at least: 5.4.1
 Tested up to: 5.4.1
 Requires PHP: 7.4.0
@@ -10,10 +10,10 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Common helpers for WordPress themes.
 
 == Description ==
-Common helpers for WordPress themes. In order to enable the functionality, use the constant NOX_DISABLE_THEME_HELPERS with true
+Common helpers for WordPress themes. In order to enable the functionality, use the constant NYX_DISABLE_THEME_HELPERS with true
 
 == Installation ==
-In order to enable the functionality, use the constant NOX_DISABLE_THEME_HELPERS with true.
+In order to enable the functionality, use the constant NYX_DISABLE_THEME_HELPERS with true.
 
 == Changelog ==
 = 1.0.0 =
@@ -26,5 +26,5 @@ In order to enable the functionality, use the constant NOX_DISABLE_THEME_HELPERS
 
 = 1.0.2 =
 
-  * Added the constant NOX_THEME_ASSETS_RELATIVE_PATH to control the relative path of the asset bundle (default: %theme%/assets/dist);
+  * Added the constant NYX_THEME_ASSETS_RELATIVE_PATH to control the relative path of the asset bundle (default: %theme%/assets/dist);
   * General fixes.

@@ -11,9 +11,9 @@
      *
      * @return bool
      */
-    function nox_theme_helpers_fn_enabled(string $name): bool
+    function nyx_theme_helpers_fn_enabled(string $name): bool
     {
-        $disabled = NOX_DISABLE_THEME_HELPERS_FUNCTIONS;
+        $disabled = NYX_DISABLE_THEME_HELPERS_FUNCTIONS;
 
         if (!is_array($disabled)) {
             $disabled = [];
@@ -24,7 +24,7 @@
     #endregion
 
     #region URLs
-    if (nox_theme_helpers_fn_enabled('validate_url')) {
+    if (nyx_theme_helpers_fn_enabled('validate_url')) {
         /**
          * @param string $url
          * @param array  $allowedSchemes
@@ -47,7 +47,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_template_url')) {
+    if (nyx_theme_helpers_fn_enabled('get_template_url')) {
         /**
          * @param string $path
          * @param string $prefix
@@ -74,7 +74,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_assets_url')) {
+    if (nyx_theme_helpers_fn_enabled('get_assets_url')) {
         /**
          * @param string $path
          * @param string $prefix
@@ -85,10 +85,10 @@
          */
         function get_assets_url(string $path, string $prefix = ''): string
         {
-            return get_template_url("{$prefix}/{$path}", NOX_THEME_ASSETS_RELATIVE_PATH);
+            return get_template_url("{$prefix}/{$path}", NYX_THEME_ASSETS_RELATIVE_PATH);
         }
 
-        if (nox_theme_helpers_fn_enabled('get_images_url')) {
+        if (nyx_theme_helpers_fn_enabled('get_images_url')) {
             /**
              * @param string $path
              *
@@ -102,7 +102,7 @@
             }
         }
 
-        if (nox_theme_helpers_fn_enabled('get_fonts_url')) {
+        if (nyx_theme_helpers_fn_enabled('get_fonts_url')) {
             /**
              * @param string $path
              *
@@ -116,7 +116,7 @@
             }
         }
 
-        if (nox_theme_helpers_fn_enabled('get_scripts_url')) {
+        if (nyx_theme_helpers_fn_enabled('get_scripts_url')) {
             /**
              * @param string $path
              *
@@ -130,7 +130,7 @@
             }
         }
 
-        if (nox_theme_helpers_fn_enabled('get_styles_url')) {
+        if (nyx_theme_helpers_fn_enabled('get_styles_url')) {
             /**
              * @param string $path
              *
@@ -144,7 +144,7 @@
             }
         }
 
-        if (nox_theme_helpers_fn_enabled('get_svg_url')) {
+        if (nyx_theme_helpers_fn_enabled('get_svg_url')) {
             /**
              * @param string $path
              *
@@ -161,7 +161,7 @@
     #endregion
 
     #region Login Verification
-    if (nox_theme_helpers_fn_enabled('is_login')) {
+    if (nyx_theme_helpers_fn_enabled('is_login')) {
         /**
          * @return bool
          */
@@ -176,8 +176,8 @@
             $loginPages       = ['wp-login.php', 'wp-register.php', 'administration', 'administracao', 'administracao-interna'];
             $customLoginPages = [];
 
-            if (is_array(NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES) && !empty(NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES)) {
-                $customLoginPages = NOX_DISABLE_THEME_HELPERS_LOGIN_PAGES;
+            if (is_array(NYX_DISABLE_THEME_HELPERS_LOGIN_PAGES) && !empty(NYX_DISABLE_THEME_HELPERS_LOGIN_PAGES)) {
+                $customLoginPages = NYX_DISABLE_THEME_HELPERS_LOGIN_PAGES;
             }
 
             return in_array(
@@ -190,7 +190,7 @@
     #endregion
 
     #region SEO & Content
-    if (nox_theme_helpers_fn_enabled('get_as_content')) {
+    if (nyx_theme_helpers_fn_enabled('get_as_content')) {
         /**
          * @param        $content
          * @param string $p_class
@@ -223,7 +223,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_as_description')) {
+    if (nyx_theme_helpers_fn_enabled('get_as_description')) {
         /**
          * @param string $content
          *
@@ -238,7 +238,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_parsed_keywords')) {
+    if (nyx_theme_helpers_fn_enabled('get_parsed_keywords')) {
         /**
          * @param $keywords
          *
@@ -265,7 +265,7 @@
     }
 
     #region Excerpts
-    if (nox_theme_helpers_fn_enabled('get_page_excerpt')) {
+    if (nyx_theme_helpers_fn_enabled('get_page_excerpt')) {
         /**
          * @param string $content
          *
@@ -298,7 +298,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_page_excerpt_length')) {
+    if (nyx_theme_helpers_fn_enabled('get_page_excerpt_length')) {
         /**
          * @return int
          */
@@ -308,7 +308,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_page_trim_excerpt')) {
+    if (nyx_theme_helpers_fn_enabled('get_page_trim_excerpt')) {
         /**
          * @param string $text
          *
@@ -328,7 +328,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('add_ellipsis')) {
+    if (nyx_theme_helpers_fn_enabled('add_ellipsis')) {
         /**
          * @param string $str
          * @param int    $max
@@ -363,7 +363,7 @@
     #endregion
 
     #region Template
-    if (nox_theme_helpers_fn_enabled('get_current_page_template_slug')) {
+    if (nyx_theme_helpers_fn_enabled('get_current_page_template_slug')) {
         /**
          * @param int $id
          *
@@ -397,7 +397,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('is_on_template')) {
+    if (nyx_theme_helpers_fn_enabled('is_on_template')) {
         /**
          * @param string $slug
          * @param int    $id
@@ -412,7 +412,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('do_template_partial')) {
+    if (nyx_theme_helpers_fn_enabled('do_template_partial')) {
         /**
          * @param string $name
          * @param array  $vars
@@ -438,7 +438,7 @@
             }
         }
 
-        if (nox_theme_helpers_fn_enabled('do_template_partial_default_vars')) {
+        if (nyx_theme_helpers_fn_enabled('do_template_partial_default_vars')) {
             /**
              * @return array
              */
@@ -451,7 +451,7 @@
     #endregion
 
     #region Formatters
-    if (nox_theme_helpers_fn_enabled('just_numbers')) {
+    if (nyx_theme_helpers_fn_enabled('just_numbers')) {
         /**
          * @param string $string
          *
@@ -463,7 +463,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('html_implode')) {
+    if (nyx_theme_helpers_fn_enabled('html_implode')) {
         /**
          * @param array $pieces
          *
@@ -475,7 +475,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('html_array_map')) {
+    if (nyx_theme_helpers_fn_enabled('html_array_map')) {
         /**
          * @param callable $callback
          * @param array    $pieces
@@ -488,7 +488,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_formated_date')) {
+    if (nyx_theme_helpers_fn_enabled('get_formated_date')) {
         /**
          * @param string $date
          * @param string $format
@@ -524,7 +524,7 @@
     }
 
     #region ACF
-    if (nox_theme_helpers_fn_enabled('get_attr_field')) {
+    if (nyx_theme_helpers_fn_enabled('get_attr_field')) {
         /**
          * @param bool $selector
          * @param bool $post_id
@@ -542,7 +542,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_url_field')) {
+    if (nyx_theme_helpers_fn_enabled('get_url_field')) {
         /**
          * @param string   $selector
          * @param bool|int $postId
@@ -564,7 +564,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_content_field')) {
+    if (nyx_theme_helpers_fn_enabled('get_content_field')) {
         /**
          * @param        $selector
          * @param bool   $post_id
@@ -585,7 +585,7 @@
     #endregion
 
     #region Phones
-    if (nox_theme_helpers_fn_enabled('get_phone_as_url')) {
+    if (nyx_theme_helpers_fn_enabled('get_phone_as_url')) {
         /**
          * @param string $phone
          *
@@ -600,7 +600,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_phone_formated')) {
+    if (nyx_theme_helpers_fn_enabled('get_phone_formated')) {
         /**
          * @param string $phone
          *
@@ -616,7 +616,7 @@
         }
     }
 
-    if (nox_theme_helpers_fn_enabled('get_whatsapp_url')) {
+    if (nyx_theme_helpers_fn_enabled('get_whatsapp_url')) {
         /**
          * @param string $phone
          *
@@ -634,7 +634,7 @@
     #endregion
 
     #region Images
-    if (nox_theme_helpers_fn_enabled('get_image_field')) {
+    if (nyx_theme_helpers_fn_enabled('get_image_field')) {
         /**
          * @param string $selector
          * @param bool   $post_id
@@ -662,7 +662,7 @@
     #endregion
 
     #region Google Maps
-    if (nox_theme_helpers_fn_enabled('get_gmaps_embed_url')) {
+    if (nyx_theme_helpers_fn_enabled('get_gmaps_embed_url')) {
         /**
          * @param string $lat
          * @param string $lng
@@ -698,7 +698,7 @@
     #endregion
 
     #region Taxonomies
-    if (nox_theme_helpers_fn_enabled('find_post_category_name')) {
+    if (nyx_theme_helpers_fn_enabled('find_post_category_name')) {
         /**
          * @param int $postId
          *
@@ -730,7 +730,7 @@
     #endregion
 
     #region Videos
-    if (nox_theme_helpers_fn_enabled('get_vimeo_or_youtube_id_from_url')) {
+    if (nyx_theme_helpers_fn_enabled('get_vimeo_or_youtube_id_from_url')) {
         /**
          * @param string $url
          * @param bool   $checkOnly
@@ -756,7 +756,7 @@
     #endregion
 
     #region Date/Time
-    if (nox_theme_helpers_fn_enabled('time_elapsed_string')) {
+    if (nyx_theme_helpers_fn_enabled('time_elapsed_string')) {
         /**
          * @param string $datetime
          * @param bool   $full
